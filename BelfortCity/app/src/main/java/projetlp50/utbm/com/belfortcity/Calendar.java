@@ -29,7 +29,6 @@ public class Calendar extends AppCompatActivity {
 
             public void onSelectedDayChange(CalendarView view,int year,int month,int dayOfMonth){
                 Intent i = new Intent(Calendar.this,Calendar_day.class);
-
                 i.putExtra("day",dayOfMonth);
                 i.putExtra("month",month);
                 i.putExtra("year",year);
