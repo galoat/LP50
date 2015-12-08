@@ -1,10 +1,12 @@
-package projetlp50.utbm.com.belfortcity;
+package projetlp50.utbm.com.belfortcity.calendar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import projetlp50.utbm.com.belfortcity.R;
 
 /**
  * Created by galoat on 01/12/15.

@@ -1,15 +1,11 @@
-package projetlp50.utbm.com.belfortcity;
+package projetlp50.utbm.com.belfortcity.calendar;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.method.ScrollingMovementMethod;
 import android.widget.CalendarView;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
+
+import projetlp50.utbm.com.belfortcity.R;
 
 /**
  * Created by galoat on 17/11/15.

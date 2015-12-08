@@ -1,6 +1,5 @@
-package projetlp50.utbm.com.belfortcity;
+package projetlp50.utbm.com.belfortcity.calendar;
 
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,17 +7,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
 import java.util.Calendar;
+
+import projetlp50.utbm.com.belfortcity.R;
 
 import static java.util.Calendar.DAY_OF_MONTH;
 
@@ -49,6 +41,10 @@ public class Calendar_day extends FragmentActivity {
            cal.set(year, month, day);
 
     }
+
+
+
+// Classe servant a gerer le deffillement des view*
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
 
         public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
@@ -60,7 +56,7 @@ public class Calendar_day extends FragmentActivity {
             Calendar_day_fragment aEnvoyer = null ;
             switch (position){
                 case 0 :aEnvoyer =functionJour(-7);
-                        break;
+                    break;
                 case 1 :aEnvoyer =functionJour(-6);
                     break;
                 case 2 :aEnvoyer = functionJour(-5);
@@ -111,6 +107,5 @@ public class Calendar_day extends FragmentActivity {
             return NUM_PAGES;
         }
     }
-
 
 }

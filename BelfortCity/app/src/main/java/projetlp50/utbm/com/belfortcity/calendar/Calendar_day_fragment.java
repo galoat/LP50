@@ -1,4 +1,4 @@
-package projetlp50.utbm.com.belfortcity;
+package projetlp50.utbm.com.belfortcity.calendar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +14,15 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import projetlp50.utbm.com.belfortcity.R;
+
 /**
  * Created by galoat on 06/12/15.
  */
 public class Calendar_day_fragment extends Fragment {
     @Nullable
 
-    protected final static SimpleDateFormat dateSortie = new SimpleDateFormat("EEE ,d,MMM");
+    protected final static SimpleDateFormat dateSortie = new SimpleDateFormat("EEEE d,MMMMMMM");
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_calendar_day,container,false);
         Bundle savedInstanceStates = this.getArguments();
