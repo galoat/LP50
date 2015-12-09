@@ -30,10 +30,7 @@ public class Calendar_day extends FragmentActivity {
             mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
            mPager.setAdapter(mPagerAdapter);
             mPager.setCurrentItem(7);
-
-
            final Intent intent= getIntent();
-
            int year =intent.getIntExtra("year", -1);
            int month =intent.getIntExtra("month", -1);
            int day =intent.getIntExtra("day", -1);

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.CalendarView;
 
+import java.util.Date;
+
 import projetlp50.utbm.com.belfortcity.R;
 
 /**
@@ -21,6 +23,8 @@ public class Calendar extends AppCompatActivity {
         }
     public void SetDateTextView(){
         CalendarView c =(CalendarView)  findViewById(R.id.calendarView);
+        java.util.Calendar calendrier = java.util.Calendar.getInstance();
+
         c.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
             public void onSelectedDayChange(CalendarView view,int year,int month,int dayOfMonth){
