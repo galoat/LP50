@@ -6,7 +6,8 @@
 package com.utbm.databaselp50.core.service;
 
 import com.utbm.databaselp50.core.entity.Evenement;
-import com.utbm.databaselp50.repositoryHibernate.HibernateEvenementRepository;
+import com.utbm.databaselp50.core.repositoryHibernate.HibernateEvenementRepository;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,4 +22,21 @@ public class ServiceEvenement {
         return evenementRepository.getListEvenement();
     }
     
+    public Evenement getById(int id)
+    {
+        HibernateEvenementRepository evenementRepository = new HibernateEvenementRepository();
+        return evenementRepository.getById(id);
+    }
+    
+    public void addCommentById(int id, String com)
+    {
+        HibernateEvenementRepository evenementRepository = new HibernateEvenementRepository();
+        evenementRepository.addCommentById(id, com);
+    }
+    
+    public List<Evenement> getEvenementByDate (Date date )
+    {
+        HibernateEvenementRepository evenementRepository = new HibernateEvenementRepository();
+        return evenementRepository.getEvenementByDate(date);
+    }
 }

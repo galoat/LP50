@@ -10,8 +10,9 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
- 
- <mapping resource="Evenement.hbm.xml"/>
-   
+    
+    <mapping resource="Evenement.hbm.xml"/>
+    <mapping resource="TypeEven.hbm.xml"/>
+    <mapping resource="CommentaireEven.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
