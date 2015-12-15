@@ -36,7 +36,7 @@ public class ServletEvenementByID extends HttpServlet {
 
         Evenement event;
         ServiceEvenement serviceEvenement = new ServiceEvenement();
-        event = serviceEvenement.getById(2);
+        event = serviceEvenement.getById(1);
         json.put("ID", event.getId());
         json.put("Name", event.getName());
         json.put("Description",event.getDescription());
@@ -52,10 +52,13 @@ public class ServletEvenementByID extends HttpServlet {
         
         for (CommentaireEven i : listeCommentaire) 
         {
-            jsonListComment.add(i.getCommentaire());
+            JSONObject jsonComment = new JSONObject();
+            jsonComment.put("commentaire", i.getCommentaire());
+            jsonComment.put("user", i.getUser());
+            jsonListComment.add(jsonComment);
         }
        // json.put("nombre", list.size());
-        json.put("Evenement",jsonListComment);
+        json.put("ListeComment",jsonListComment);
         json.put("NbrComment",listeCommentaire.size());
         out.print(json.toString());
         
