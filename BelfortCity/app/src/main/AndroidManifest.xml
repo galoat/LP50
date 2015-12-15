@@ -6,10 +6,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".calendar.Calendar" />
         <activity android:name=".calendar.Calendar_day"/>
-        <activity android:name=".calendar.Calendar_MoreInformation"/>
+        <activity android:name=".calendar.Calendar_MoreInformation" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".mainPage.AboutActivity"/>
         <activity android:name=".mainPage.MainActivity"
             android:label="@string/app_name" >
@@ -19,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MeteoActivity"/>
     </application>
+   
 
 </manifest>

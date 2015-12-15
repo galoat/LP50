@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import projetlp50.utbm.com.belfortcity.MeteoActivity;
 import projetlp50.utbm.com.belfortcity.R;
 import projetlp50.utbm.com.belfortcity.calendar.Calendar;
 import projetlp50.utbm.com.belfortcity.weather.WeatherManager;
@@ -28,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageView home_weather_icon ;
 
     private View mAboutContainer;
+    private View watherContainer;
 
     private TextView textViewCalendar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        watherContainer = (View)findViewById(R.id.home_weather);
+        watherContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MeteoActivity.class);
                 startActivity(intent);
             }
         });
