@@ -73,8 +73,9 @@ public class HibernateEvenementRepository {
         {   
             session.beginTransaction();       
             e= (Evenement)session.get(Evenement.class,id);
+            if(e != null){
             Hibernate.initialize(e.getCommentaires());
-            Hibernate.initialize(e.getType());
+            Hibernate.initialize(e.getType());}
             session.getTransaction().commit();
         } catch (HibernateException he) 
         {
