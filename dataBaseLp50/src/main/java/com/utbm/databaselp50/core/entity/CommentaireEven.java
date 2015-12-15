@@ -12,6 +12,7 @@ package com.utbm.databaselp50.core.entity;
 public class CommentaireEven {
     int id;
     String commentaire;
+    String user;
     
     public int getId() {
         return id;
@@ -27,6 +28,14 @@ public class CommentaireEven {
 
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
     
     

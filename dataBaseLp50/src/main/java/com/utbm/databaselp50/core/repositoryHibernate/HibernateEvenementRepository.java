@@ -107,20 +107,21 @@ public class HibernateEvenementRepository {
     }
     
     
-    public void addCommentById(int id, String com)
+    public void addCommentById(int id, String com, String user)
     {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        
         
         try 
         {   
             Evenement e = null;
             session.beginTransaction();       
             e= (Evenement)session.get(Evenement.class,id);
-            Hibernate.initialize(e.getCommentaires());  
+         
+             Hibernate.initialize(e.getCommentaires());  
             
             CommentaireEven commentaire = new CommentaireEven();
             commentaire.setCommentaire(com);
+            commentaire.setUser(user);
             e.getCommentaires().add(commentaire);
             
             session.getTransaction().commit();
