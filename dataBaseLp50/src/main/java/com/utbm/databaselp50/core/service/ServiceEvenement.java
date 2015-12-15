@@ -28,10 +28,10 @@ public class ServiceEvenement {
         return evenementRepository.getById(id);
     }
     
-    public void addCommentById(int id, String com)
+    public void addCommentById(int id, String com ,String user)
     {
         HibernateEvenementRepository evenementRepository = new HibernateEvenementRepository();
-        evenementRepository.addCommentById(id, com);
+        evenementRepository.addCommentById(id, com ,user);
     }
     
     public List<Evenement> getEvenementByDate (Date date )

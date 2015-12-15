@@ -7,5 +7,6 @@
       <generator class="identity"/>
     </id>
     <property column="COMMENTAIRE" name="commentaire" not-null="true"/>
+     <property column="USER" name="user" not-null="true"/>
   </class>
 </hibernate-mapping>
