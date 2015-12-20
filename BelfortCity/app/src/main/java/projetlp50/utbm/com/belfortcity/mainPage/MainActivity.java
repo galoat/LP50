@@ -3,10 +3,8 @@ package projetlp50.utbm.com.belfortcity.mainPage;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             String output = null ;
             WeatherManager weaterManager = new WeatherManager();
             try {
-                output = weaterManager.getJSON();
+                output = weaterManager.getJSONToday();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -167,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
                     else if (icon.equals("13n"))
                         home_weather_icon.setImageResource(R.drawable.forecast_13n);
 
-                    else if (icon.equals("03d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_03d);
+                    else if (icon.equals("50d"))
+                        home_weather_icon.setImageResource(R.drawable.forecast_50d);
 
                     else if (icon.equals("50n"))
                         home_weather_icon.setImageResource(R.drawable.forecast_50n);
@@ -179,17 +177,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-            }                 ;
-
-
-
-              /* JSONArray jArr = jObj.getJSONArray("weather");
-                JSONObject JSONWeather = jArr.getJSONObject(0);
-                home_weather_temp.setText((String) JSONWeather.get("description"));
-              JSONObject jArr = jObj.getJSONObject("main");
-*/
-            //   home_weather_temp.setText(""+ jArr.getDouble("temp"));
-
+            }
         }
 
     }

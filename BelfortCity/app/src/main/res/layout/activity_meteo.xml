@@ -2,38 +2,43 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#ffffff"
     android:fillViewport="true">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
         android:background="#ffffff">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="WEATHER"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:layout_marginTop="15dp"/>
+
+        <View
+            android:id="@+id/home_delimiter_3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/background_dark"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="13/12/2013, friday"
-            android:id="@+id/date"
+            android:id="@+id/dateMeteo"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"/>
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="16:02"
-            android:id="@+id/heure"
-            android:textColor="#000000"
-            android:textSize="50sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"/>
 
         <LinearLayout
             android:id="@+id/first_container_types_horizontal"
@@ -59,7 +64,7 @@
                 android:gravity="center"
                 android:text="Belfort"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:layout_marginLeft="10dp"/>
         </LinearLayout>
 
@@ -80,14 +85,22 @@
                 android:layout_weight="0.40"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
-                android:paddingTop="85dp">
+                android:paddingTop="50dp">
 
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/meteo_nuage"
                     android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/bigLogoMeteo" />
+                <TextView
+                    android:id="@+id/descriptionMeteo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="25sp"/>
 
             </LinearLayout>
             <LinearLayout
@@ -112,8 +125,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="27,0°C"
-                    android:id="@+id/temp"
+                    android:text="0°C"
+                    android:id="@+id/tempToday"
                     android:textColor="#000000"
                     android:textSize="40sp"
                     android:layout_marginTop="15dp"
@@ -141,11 +154,12 @@
                         android:layout_height="wrap_content"
                         android:drawablePadding="10dp"
                         android:gravity="center"
-                        android:text="28,0°C"
+                        android:text="0°C"
                         android:textSize="25sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000"
+                        android:id="@+id/tempMaxToday" />
                 </LinearLayout>
 
 
@@ -170,11 +184,13 @@
                         android:layout_height="wrap_content"
                         android:drawablePadding="10dp"
                         android:gravity="center"
-                        android:text="26,0°C"
+                        android:text="0°C"
                         android:textSize="25sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000"
+                        android:id="@+id/tempMinToday"/>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -194,11 +210,12 @@
                         android:layout_centerHorizontal="true"/>
 
                     <TextView
+                        android:id="@+id/windToday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawablePadding="10dp"
                         android:gravity="center"
-                        android:text="26,0 kM/H"
+                        android:text="0 kM/H"
                         android:textSize="20sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
@@ -210,7 +227,7 @@
         <LinearLayout
             android:id="@+id/troisieme_container_types_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/home_country_name"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
@@ -226,18 +243,20 @@
                 android:background="#b71c1c">
 
                 <ImageView
+                    android:id="@+id/jour1Image"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/forecast_10n"
+                    android:src="@drawable/ic_no_weather"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
+                    android:id="@+id/jour1Temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
                     android:gravity="center"
-                    android:text="18°C/20°C"
+                    android:text="0°C/0°C"
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
@@ -254,18 +273,20 @@
                 android:gravity="center"
                 android:background="#d32f2f">
                 <ImageView
+                    android:id="@+id/jour2Image"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/forecast_09d"
+                    android:src="@drawable/ic_no_weather"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
+                    android:id="@+id/jour2Temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
                     android:gravity="center"
-                    android:text="18°C/20°C"
+                    android:text="0°C/0°C"
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
@@ -280,18 +301,20 @@
                 android:gravity="center"
                 android:background="#f44336">
                 <ImageView
+                    android:id="@+id/jour3Image"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/forecast_10d"
+                    android:src="@drawable/ic_no_weather"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
+                    android:id="@+id/jour3Temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
                     android:gravity="center"
-                    android:text="18°C/20°C"
+                    android:text="0°C/0°C"
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
