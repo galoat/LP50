@@ -2,6 +2,7 @@ package projetlp50.utbm.com.belfortcity.calendar;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,65 +14,131 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import projetlp50.utbm.com.belfortcity.R;
+import projetlp50.utbm.com.belfortcity.getIp.AdresseIp;
+import projetlp50.utbm.com.belfortcity.weather.WeatherManager;
 
 /**
  * Created by galoat on 06/12/15.
  */
 public class Calendar_day_fragment extends Fragment {
-
-
-
+    private int day;
+    private int month;
+    private int year;
+    protected int NbEvenement;
     protected final static SimpleDateFormat dateSortie = new SimpleDateFormat("EEEE d,MMMMMMM");
+    protected TextView textTitre;
+    protected TextView textDate;
+    protected  TextView textDescription;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_calendar_day,container,false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_calendar_day, container, false);
         Bundle savedInstanceStates = this.getArguments();
-       int  day=savedInstanceStates.getInt("day");
-        int month =savedInstanceStates.getInt("month");
-        int year = savedInstanceStates.getInt("year");
-       TextView texteJournée = (TextView)rootView.findViewById(R.id.Journée);
+        day = savedInstanceStates.getInt("day");
+        month = savedInstanceStates.getInt("month");
+        year = savedInstanceStates.getInt("year");
+        TextView texteJournée = (TextView) rootView.findViewById(R.id.Journée);
 
         java.util.Calendar cal = java.util.Calendar.getInstance();
         cal.set(year, month, day);
 
         texteJournée.setText(formatDate(cal.getTime()));
+        GetElements task = new GetElements();
+        task.execute(new String[]{});
 
-       int  NbEvenement= 3;
 
-        LinearLayout insideScroll =(LinearLayout) rootView.findViewById(R.id.scrollLayout);
+         NbEvenement = 3;
 
-        for(int i =0;i<NbEvenement;i++){
-            ViewGroup vueText =(ViewGroup)  inflater.inflate(R.layout.activity_calendar_layout_scroll, container, false);
-            TextView textTitre =(TextView)vueText.findViewById(R.id.texteTitre);
+        LinearLayout insideScroll = (LinearLayout) rootView.findViewById(R.id.scrollLayout);
+
+        for (int i = 0; i < NbEvenement; i++) {
+            ViewGroup vueText = (ViewGroup) inflater.inflate(R.layout.activity_calendar_layout_scroll, container, false);
+            textTitre = (TextView) vueText.findViewById(R.id.texteTitre);
             textTitre.setText("LE TITRE");
-            TextView textDate =(TextView)vueText.findViewById(R.id.TextDate);
+            textDate = (TextView) vueText.findViewById(R.id.TextDate);
             textDate.setText(" 10 H 00");
 
-            TextView textDescription =(TextView)vueText.findViewById(R.id.textDescription);
-            textDescription.setText("Mandatum multorum villam occiduntur scilicet fractis per actitata nulla suam est fortunas dilatata Crateras lapide villam ad non cum ut occiduntur quarto dilatata ambo multiplices fortunas ad ambigerentur ut vicensimo scilicet scilicet et ad ab acti ut et occiduntur lapide filius cum Crateras post igitur acti suam Crateras filius et exilium ut et quaedam ambigerentur villam villam et nulla pater acti suam multorum quae multiplices disiungitur cruribus scilicet ab scilicet ambigerentur per cum in lapide exilium et pater levius lapide constaret igitur multiplices occiduntur clades et occiduntur cum est ambo Apollinares cum Antiochia ab ambigerentur fractis acti scilicet cruribus post.Mandatum multorum villam occiduntur scilicet fractis per actitata nulla suam est fortunas dilatata Crateras lapide villam ad non cum ut occiduntur quarto dilatata ambo multiplices fortunas ad ambigerentur ut vicensimo scilicet scilicet et ad ab acti ut et occiduntur lapide filius cum Crateras post igitur acti suam Crateras filius et exilium ut et quaedam ambigerentur villam villam et nulla pater acti suam multorum quae multiplices disiungitur cruribus scilicet ab scilicet ambigerentur per cum in lapide exilium et pater levius lapide constaret igitur multiplices occiduntur clades et occiduntur cum est ambo Apollinares cum Antiochia ab ambigerentur fractis acti scilicet cruribus post.");
-            textDescription.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), Calendar_MoreInformation.class);
-                    intent.putExtra("ID", 1);
-                    startActivity(intent);
-                }
-            });
+            textDescription = (TextView) vueText.findViewById(R.id.textDescription);
 
+                    textDescription.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity(), Calendar_MoreInformation.class);
+                            intent.putExtra("ID", 1);
+                            startActivity(intent);
+                        }
+                    });
 
 
             insideScroll.addView(vueText);
 
         }
-        return  rootView;
+        return rootView;
     }
 
-    public static String formatDate(Date date){
-        return  dateSortie.format(date);
+    public static String formatDate(Date date) {
+        return dateSortie.format(date);
     }
+
+
+
+
+    private class GetElements extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String output = null ;
+            Calendar_Servlet sManager = new Calendar_Servlet();
+            try {
+                output = sManager.Commentaire();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return output;
+        }
+
+        @Override
+        protected void onPostExecute(String output)
+        {
+            if (output =="")
+            {
+                //     home_no_weather_icon.setVisibility(View.VISIBLE);
+                //     home_no_weather.setVisibility(View.VISIBLE);
+            }
+            else
+            {
+                JSONObject jObj = null;
+                try
+                {
+                    jObj = new JSONObject(output.toString());
+                    int minute = (int)(jObj.getDouble("Evenement"));
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
+    }
+
 
 
 }

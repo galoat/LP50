@@ -37,7 +37,7 @@ public class ServletListeEvenementByDate extends HttpServlet {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         ServiceEvenement serviceEvenement = new ServiceEvenement();
         Date date = null;
-        String date1 = "2015-02-04";
+        String date1 = "2015-01-24";
 
         try
         {
