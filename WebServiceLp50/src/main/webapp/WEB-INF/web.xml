@@ -83,6 +83,14 @@
         <url-pattern>/addNoteEnjoyById</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ServletEvenement</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEvenement.ServletEvenement</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletEvenement</servlet-name>
+        <url-pattern>/ServletEvenement</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

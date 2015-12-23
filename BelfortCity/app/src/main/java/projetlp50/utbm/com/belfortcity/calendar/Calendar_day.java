@@ -34,6 +34,7 @@ public class Calendar_day extends FragmentActivity {
            int year =intent.getIntExtra("year", -1);
            int month =intent.getIntExtra("month", -1);
            int day =intent.getIntExtra("day", -1);
+
            cal = java.util.Calendar.getInstance();
            cal.set(year, month, day);
 
