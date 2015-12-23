@@ -36,8 +36,11 @@ public class ServletListeEvenementByDate extends HttpServlet {
         
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         ServiceEvenement serviceEvenement = new ServiceEvenement();
+        int year = Integer.parseInt(request.getParameter("year"));
+        int month= Integer.parseInt(request.getParameter("month"));
+        int day = Integer.parseInt(request.getParameter("day"));
         Date date = null;
-        String date1 = "2015-01-24";
+        String date1 = year+"-"+month+"-"+day;
 
         try
         {
@@ -60,7 +63,6 @@ public class ServletListeEvenementByDate extends HttpServlet {
                 jo.put("HeureF", i.getHeureF());
                 jo.put("MinuteD", i.getMinuteD());
                 jo.put("MinuteF", i.getMinuteF());
-                jo.put("StartDate", i.getStartDate());
                 jo.put("Types", i.getType().getType());
 
                 jsonListEvent.add(jo);

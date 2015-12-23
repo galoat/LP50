@@ -29,10 +29,10 @@ public class Calendar_MoreInformation extends AppCompatActivity {
         setContentView(R.layout.activity_calendar_mor_information_in);
         final Intent intent = getIntent();
         int id = intent.getIntExtra("ID", -1);
-        nbCommentaire=10;
+        nbCommentaire=5;
 
         TextView titre =(TextView) findViewById(R.id.texteTitre);
-        titre.setText("LE TITRE");
+        titre.setText(""+id);
 
         final TextView  textDate=(TextView) findViewById(R.id.TextDate);
         textDate.setText("l horraire !!");
