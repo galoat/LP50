@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.utbm.databaselp50.core.entity">
+    <class name="Enjoy" table="ENJOY">
+        
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+    
+        <property name="name" column="NAME" not-null="true"/>
+        <property name="type" column="TYPE" not-null="true"/>    
+        <property name="description" column="DESCRIPTION" not-null="true"/>  
+        <property name="horraireLundi" column="HORRAIRE_LUNDI" not-null="true"/> 
+        <property name="horraireMardi" column="HORRAIRE_MARDI" not-null="true"/> 
+        <property name="horraireMercredi" column="HORRAIRE_MERCREDI" not-null="true"/> 
+        <property name="horraireJeudi" column="HORRAIRE_JEUDI" not-null="true"/> 
+        <property name="horraireVendredi" column="HORRAIRE_VENDREDI" not-null="true"/> 
+        <property name="horraireSamedi" column="HORRAIRE_SAMEDI" not-null="true"/> 
+        <property name="horraireDimanche" column="HORRAIRE_DIMANCHE" not-null="true"/> 
+        <property name="note" column="NOTE" not-null="true"/>
+        <property name="nbrNote" column="NOMBRE_NOTE" not-null="true"/>    
+        
+        <set cascade="all" name="commentaires" table="ENJOY_COMMENTAIRE">
+            <key column = "ID_EVENT"/>
+            <many-to-many class="CommentaireEnjoy" column="ID_COMMENTAIRE"/>
+        </set>         
+    </class>
+</hibernate-mapping>
+
