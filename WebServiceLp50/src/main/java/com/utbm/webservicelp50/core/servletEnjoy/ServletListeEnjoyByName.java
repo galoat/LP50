@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.utbm.webservicelp50.core.servletEvenement;
+package com.utbm.webservicelp50.core.servletEnjoy;
 
-import com.utbm.databaselp50.core.entity.Evenement;
-import com.utbm.databaselp50.core.service.ServiceEvenement;
+import com.utbm.databaselp50.core.entity.Enjoy;
+import com.utbm.databaselp50.core.service.ServiceEnjoy;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,7 +21,7 @@ import org.json.simple.JSONObject;
  *
  * @author nicolas
  */
-public class ServletEvenement extends HttpServlet {
+public class ServletListeEnjoyByName extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,28 +30,27 @@ public class ServletEvenement extends HttpServlet {
     
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
+        List<Enjoy> list = serviceEnjoy.getListEnjoyByName("biere");
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
-
-        List <Evenement> list;
-        ServiceEvenement serviceEvenement = new ServiceEvenement();
-        list = serviceEvenement.getListEvenement();
-
-        JSONArray jsonListEvent = new JSONArray();
-        for (Evenement i : list) 
+        JSONArray jsonListEnjoy = new JSONArray();
+        for (Enjoy i : list)
         {
             JSONObject jo = new JSONObject();
             
             jo.put("ID", i.getId());
-            jo.put("Name", i.getName());
+            jo.put("NAME",i.getName());
+            jo.put("DESCRIPTION", i.getDescription());
+            jo.put("NOMBRE_NOTE", i.getNbrNote());
+            jo.put("NOTE", i.getNote());
+            jo.put("TYPE", i.getType());
             
-
-            jsonListEvent.add(jo);
+            jsonListEnjoy.add(jo);
         }
         json.put("nombre", list.size());
-        json.put("Evenement",jsonListEvent);
-        
-        out.print(json.toString());
+        json.put("Enjoy",jsonListEnjoy);
+        out.print(json.toString());     
         
     }
 }

@@ -6,9 +6,7 @@
 package com.utbm.databaselp50.core.service;
 
 import com.utbm.databaselp50.core.entity.Enjoy;
-import com.utbm.databaselp50.core.entity.Evenement;
 import com.utbm.databaselp50.core.repositoryHibernate.HibernateEnjoyRepository;
-import com.utbm.databaselp50.core.repositoryHibernate.HibernateEvenementRepository;
 import java.util.List;
 
 /**

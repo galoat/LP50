@@ -29,12 +29,58 @@
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>AddCommentaireById</servlet-name>
+        <servlet-name>AddCommentaireEvenementById</servlet-name>
         <servlet-class>com.utbm.webservicelp50.core.servletEvenement.ServletAddCommentaireById</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AddCommentaireById</servlet-name>
-        <url-pattern>/AddCommentaireById</url-pattern>
+        <servlet-name>AddCommentaireEvenementById</servlet-name>
+        <url-pattern>/addCommentaireEvenementById</url-pattern>
+    </servlet-mapping>
+        
+   
+    <servlet>
+        <servlet-name>AddCommentaireEnjoyById</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEnjoy.ServletAddCommentaireById</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCommentaireEnjoyById</servlet-name>
+        <url-pattern>/addCommentaireEnjoyById</url-pattern>
+    </servlet-mapping>    
+    
+    <servlet>
+        <servlet-name>EnjoyById</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEnjoy.ServletEnjoyByID</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnjoyById</servlet-name>
+        <url-pattern>/getEnjoyById</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListeEnjoy</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEnjoy.ServletListeEnjoy</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListeEnjoy</servlet-name>
+        <url-pattern>/getListeEnjoy</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>ListeEnjoyByName</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEnjoy.ServletListeEnjoyByName</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListeEnjoyByName</servlet-name>
+        <url-pattern>/getListeEnjoyByName</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddNoteEnjoyById</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEnjoy.ServletAddNoteById</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNoteEnjoyById</servlet-name>
+        <url-pattern>/addNoteEnjoyById</url-pattern>
     </servlet-mapping>
     
     <session-config>

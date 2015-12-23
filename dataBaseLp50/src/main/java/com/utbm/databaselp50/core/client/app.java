@@ -19,10 +19,7 @@ public class app {
      {
         // Session session=HibernateUtil.getSessionFactory().openSession();
         ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
-        //List <Enjoy> listEnjoy = serviceEnjoy.getEnjoyByName("");
-         
-        serviceEnjoy.newNoteById(1, 12);
-         
+        serviceEnjoy.addCommentById(1, "new comment2222" ,"marc dorcel");   
          
         /* Session session=HibernateUtil.getSessionFactory().openSession();
          ServiceEvenement serviceEvenement = new ServiceEvenement();
