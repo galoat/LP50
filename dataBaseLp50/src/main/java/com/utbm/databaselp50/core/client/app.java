@@ -5,15 +5,10 @@
  */
 package com.utbm.databaselp50.core.client;
 
-import com.utbm.databaselp50.core.entity.CommentaireEven;
-import com.utbm.databaselp50.core.entity.Evenement;
-import com.utbm.databaselp50.core.service.ServiceEvenement;
-import com.utbm.databaselp50.core.util.HibernateUtil;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.utbm.databaselp50.core.entity.CommentaireEnjoy;
+import com.utbm.databaselp50.core.entity.Enjoy;
+import com.utbm.databaselp50.core.service.ServiceEnjoy;
 import java.util.List;
-import org.hibernate.Session;
 
 /**
  *
@@ -22,7 +17,14 @@ import org.hibernate.Session;
 public class app {
      public static void main(String[] args)
      {
-        Session session=HibernateUtil.getSessionFactory().openSession();
+        // Session session=HibernateUtil.getSessionFactory().openSession();
+        ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
+        //List <Enjoy> listEnjoy = serviceEnjoy.getEnjoyByName("");
+         
+        serviceEnjoy.newNoteById(1, 12);
+         
+         
+        /* Session session=HibernateUtil.getSessionFactory().openSession();
          ServiceEvenement serviceEvenement = new ServiceEvenement();
          SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
          Date date = null;
@@ -42,7 +44,8 @@ public class app {
         } catch (ParseException e)
         {
             e.printStackTrace();
-         }
+         }*/
+         
         // serviceEvenement.getEvenementByDate(date)
        //  serviceEvenement.addCommentById(2, "nouveau comm test");
         /* Evenement e = serviceEvenement.getById(1);

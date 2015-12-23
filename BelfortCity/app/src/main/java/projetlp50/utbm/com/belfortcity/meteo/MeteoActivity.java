@@ -118,68 +118,7 @@ public class MeteoActivity extends Activity {
                     String icon = (String) jWeather.get("icon");
                     changeIconBig(icon, bigLogoMeteo  );
 
-               /*     JSONArray jArr = jObj.getJSONArray("weather");
-                    JSONObject jWeather = jArr.getJSONObject(0);
-                    home_weather_type.setText((String) jWeather.get("description"));
-
-                    String icon = (String) jWeather.get("icon");
-                    if (icon.equals("01d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_01d);
-
-                    else if (icon.equals("01n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_01n);
-
-                    else if (icon.equals("02d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_02d);
-
-                    else if (icon.equals("02n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_02n);
-
-                    else if (icon.equals("03d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_03d);
-
-                    else if (icon.equals("03n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_03n);
-
-                    else if (icon.equals("04d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_04d);
-
-                    else if (icon.equals("04n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_04n);
-
-                    else if (icon.equals("09d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_09d);
-
-                    else if (icon.equals("09n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_09n);
-
-                    else if (icon.equals("10d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_10d);
-
-                    else if (icon.equals("10n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_10n);
-
-                    else if (icon.equals("11d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_11d);
-
-                    else if (icon.equals("11n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_11n);
-
-                    else if (icon.equals("13d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_13d);
-
-                    else if (icon.equals("13n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_13n);
-
-                    else if (icon.equals("03d"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_03d);
-
-                    else if (icon.equals("50n"))
-                        home_weather_icon.setImageResource(R.drawable.forecast_50n);
-
-*/
-
-                } catch (JSONException e) {
+                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
