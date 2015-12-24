@@ -24,6 +24,9 @@ public class ServletAddCommentaireById extends HttpServlet {
             throws ServletException, IOException
     {
         ServiceEvenement serviceEvenement = new ServiceEvenement();
-        serviceEvenement.addCommentById(3, "new comment2222" ,"marc dorcel");        
+        int id =Integer.parseInt(request.getParameter("id"));
+        String comment =request.getParameter("comment");
+        String user = request.getParameter("user");
+        serviceEvenement.addCommentById(3, comment ,user);        
     }
 }

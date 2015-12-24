@@ -36,7 +36,7 @@ public class ServletEvenementByID extends HttpServlet {
 
         Evenement event;
         ServiceEvenement serviceEvenement = new ServiceEvenement();
-        event = serviceEvenement.getById(1);
+        event = serviceEvenement.getById(Integer.parseInt(request.getParameter("id")));
         json.put("ID", event.getId());
         json.put("Name", event.getName());
         json.put("Description",event.getDescription());

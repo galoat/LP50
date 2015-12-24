@@ -33,6 +33,8 @@ public class Calendar_MoreInformation extends AppCompatActivity {
     private int id;
     private  Intent intent;
     private LayoutInflater layoutInflater;
+    private String name;
+    private String comm;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_mor_information_in);
@@ -50,15 +52,21 @@ public class Calendar_MoreInformation extends AppCompatActivity {
         boutton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            LinearLayout layoutPrincipal = (LinearLayout) findViewById(R.id.layoutAjout);
+            LinearLayout layoutPrincipal = (LinearLayout) findViewById(R.id.layoutComm);
 
             if (pseudo.getText() != null && commentaire.getText() != null) {
 
                 ViewGroup comment = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_calendar_more_info_comment, null);
                 TextView commentairNom = (TextView) comment.findViewById(R.id.TextCommentaireNom);
                 commentairNom.setText(pseudo.getText());
+                name=pseudo.getText().toString();
                 TextView commentcorp = (TextView) comment.findViewById(R.id.TextCommentaire);
                 commentcorp.setText(commentaire.getText());
+                comm = commentaire.getText().toString();
+                AddElements task = new AddElements();
+                task.execute(new String[]{});
+                pseudo.append("");
+                commentaire.append("");
                 layoutPrincipal.addView(comment);
             }
 
@@ -140,6 +148,19 @@ public class Calendar_MoreInformation extends AppCompatActivity {
         }
 
     }
+    private class AddElements extends AsyncTask<String, Void, String> {
 
+        @Override
+        protected String doInBackground(String... params) {
+            String output = null;
+            Calendar_Servlet sManager = new Calendar_Servlet();
+            try {
+                output = sManager.addComment(id, name, comm);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return output;
+        }
+    }
 
 }

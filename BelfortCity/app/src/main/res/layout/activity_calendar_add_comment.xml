@@ -12,6 +12,7 @@
         android:id="@+id/textpseudo"
         android:textSize="22dp"
         android:background="@color/background_floating_material_light"
+        android:textColor="@color/background_material_dark"
         />
     <View
 
@@ -28,6 +29,7 @@
         android:id="@+id/textcomment"
         android:textSize="22dp"
         android:background="@color/background_floating_material_light"
+        android:textColor="@color/background_material_dark"
         />
 
     <Button

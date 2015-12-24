@@ -48,30 +48,46 @@ public class Calendar_Servlet {
     }
 
     public String ListeComment(int id) throws IOException{
-
-
         InputStream stream = null;
-
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEvenmentById");
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEvenmentById?id="+id);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
-
         try
         {
             HttpURLConnection httpConnection = (HttpURLConnection) connection;
             httpConnection.setRequestMethod("GET");
             httpConnection.connect();
-
             if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 stream = httpConnection.getInputStream();
                 BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
                 String s = "";
                 while ((s = buffer.readLine()) != null)
                     output.append(s);
-
-
             }
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return output.toString() ;
+    }
 
+    public String addComment(int id,String name,String comment) throws IOException{
+        InputStream stream = null;
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addCommentaireEvenementById?id="+id+"&user="+name+"&comment="+comment);
+        URLConnection connection = url.openConnection();
+        StringBuffer output = new StringBuffer("");
+        try
+        {
+            HttpURLConnection httpConnection = (HttpURLConnection) connection;
+            httpConnection.setRequestMethod("GET");
+            httpConnection.connect();
+            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                stream = httpConnection.getInputStream();
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "";
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+            }
         } catch (Exception ex)
         {
             ex.printStackTrace();
