@@ -86,7 +86,7 @@ public class Calendar_day_fragment extends Fragment {
             String output = null ;
             Calendar_Servlet sManager = new Calendar_Servlet();
             try {
-                output = sManager.Commentaire(year,month,day);
+                output = sManager.ListeEvenement(year,month,day);
             } catch (IOException e) {
                 e.printStackTrace();
             }

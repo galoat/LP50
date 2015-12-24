@@ -44,7 +44,6 @@ public class ServletEvenementByID extends HttpServlet {
         json.put("HeureF", event.getHeureF());
         json.put("MinuteD", event.getMinuteD());
         json.put("MinuteF", event.getMinuteF());
-        json.put("StartDate", event.getStartDate());
         json.put("Type", event.getType().getType());
             
         JSONArray jsonListComment = new JSONArray();

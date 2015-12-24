@@ -16,7 +16,7 @@ import projetlp50.utbm.com.belfortcity.getIp.AdresseIp;
 public class Calendar_Servlet {
 
 
-    public String Commentaire(int year,int month,int day) throws IOException{
+    public String ListeEvenement(int year,int month,int day) throws IOException{
 
 
         InputStream stream = null;
@@ -46,5 +46,38 @@ public class Calendar_Servlet {
         }
         return output.toString() ;
     }
+
+    public String ListeComment(int id) throws IOException{
+
+
+        InputStream stream = null;
+
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEvenmentById");
+        URLConnection connection = url.openConnection();
+        StringBuffer output = new StringBuffer("");
+
+        try
+        {
+            HttpURLConnection httpConnection = (HttpURLConnection) connection;
+            httpConnection.setRequestMethod("GET");
+            httpConnection.connect();
+
+            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                stream = httpConnection.getInputStream();
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "";
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+
+
+            }
+
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return output.toString() ;
+    }
+
     }
 
