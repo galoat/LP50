@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".MeteoActivity"/>
         <activity android:name=".mainPage.MainActivity"/>
+        <activity android:name=".eat.Eat"/>
     </application>
    
 

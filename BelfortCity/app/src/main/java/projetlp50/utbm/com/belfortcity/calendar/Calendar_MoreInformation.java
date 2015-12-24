@@ -110,8 +110,7 @@ public class Calendar_MoreInformation extends AppCompatActivity {
         {
             if (output =="")
             {
-                //     home_no_weather_icon.setVisibility(View.VISIBLE);
-                //     home_no_weather.setVisibility(View.VISIBLE);
+
             }
             else
             {

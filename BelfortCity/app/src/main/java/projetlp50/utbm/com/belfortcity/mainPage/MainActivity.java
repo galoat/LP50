@@ -17,6 +17,7 @@ import java.io.IOException;
 import projetlp50.utbm.com.belfortcity.MeteoActivity;
 import projetlp50.utbm.com.belfortcity.R;
 import projetlp50.utbm.com.belfortcity.calendar.Calendar;
+import projetlp50.utbm.com.belfortcity.eat.Eat;
 import projetlp50.utbm.com.belfortcity.weather.WeatherManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private View watherContainer;
 
     private TextView textViewCalendar;
+
+    private TextView textViewEat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-       textViewCalendar =(TextView)findViewById(R.id.home_calendar_btn);
+       textViewEat =(TextView)findViewById(R.id. home_eat_btn);
+        textViewEat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Eat.class);
+                startActivity(intent);
+            }
+        });
+
+        textViewCalendar =(TextView)findViewById(R.id.home_calendar_btn);
         textViewCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
