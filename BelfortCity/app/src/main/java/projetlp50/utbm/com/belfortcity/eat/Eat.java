@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -64,12 +65,16 @@ public class Eat extends FragmentActivity {
                         String Description =  jsonObject.getString("DESCRIPTION");
                         String nom = jsonObject.getString("NAME");
                         String type = jsonObject.getString("TYPE");
-
+                        int note =jsonObject.getInt("NOTE");
                         ViewGroup vueText = (ViewGroup) inflater.inflate(R.layout.activity_eat_scroll, null);
                         TextView textTitre = (TextView) vueText.findViewById(R.id.texteTitre);
                         textTitre.setText(type);
                         TextView  textDescription = (TextView) vueText.findViewById(R.id.textDescription);
                         textDescription.setText(Description);
+
+                        RatingBar Note = (RatingBar) vueText.findViewById(R.id.Note);
+                        Note.setRating(note);
+
                         layoutPrincipal.addView(vueText);
                     }
 
