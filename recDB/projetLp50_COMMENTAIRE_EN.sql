@@ -18,27 +18,28 @@ USE `projetLp50`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `TYPE_E`
+-- Table structure for table `COMMENTAIRE_EN`
 --
 
-DROP TABLE IF EXISTS `TYPE_E`;
+DROP TABLE IF EXISTS `COMMENTAIRE_EN`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `TYPE_E` (
+CREATE TABLE `COMMENTAIRE_EN` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `TYPE` varchar(255) NOT NULL,
+  `COMMENTAIRE` varchar(255) NOT NULL,
+  `USER` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TYPE_E`
+-- Dumping data for table `COMMENTAIRE_EN`
 --
 
-LOCK TABLES `TYPE_E` WRITE;
-/*!40000 ALTER TABLE `TYPE_E` DISABLE KEYS */;
-INSERT INTO `TYPE_E` VALUES (1,'séminaire'),(2,'conférence'),(3,'atelier technique'),(4,'atelier déco'),(5,'exposition'),(6,'salon'),(7,'soirée'),(8,'évènement VIP'),(9,'porte ouverte');
-/*!40000 ALTER TABLE `TYPE_E` ENABLE KEYS */;
+LOCK TABLES `COMMENTAIRE_EN` WRITE;
+/*!40000 ALTER TABLE `COMMENTAIRE_EN` DISABLE KEYS */;
+INSERT INTO `COMMENTAIRE_EN` VALUES (1,'new comment2222','marc '),(2,'ent2222','marc d');
+/*!40000 ALTER TABLE `COMMENTAIRE_EN` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-25 10:05:20
+-- Dump completed on 2015-12-25 10:05:21
