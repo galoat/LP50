@@ -18,27 +18,38 @@ USE `projetLp50`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `TYPE_E`
+-- Table structure for table `ENJOY`
 --
 
-DROP TABLE IF EXISTS `TYPE_E`;
+DROP TABLE IF EXISTS `ENJOY`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `TYPE_E` (
+CREATE TABLE `ENJOY` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) NOT NULL,
   `TYPE` varchar(255) NOT NULL,
+  `DESCRIPTION` varchar(255) NOT NULL,
+  `HORRAIRE_LUNDI` varchar(255) NOT NULL,
+  `HORRAIRE_MARDI` varchar(255) NOT NULL,
+  `HORRAIRE_MERCREDI` varchar(255) NOT NULL,
+  `HORRAIRE_JEUDI` varchar(255) NOT NULL,
+  `HORRAIRE_VENDREDI` varchar(255) NOT NULL,
+  `HORRAIRE_SAMEDI` varchar(255) NOT NULL,
+  `HORRAIRE_DIMANCHE` varchar(255) NOT NULL,
+  `NOTE` double NOT NULL,
+  `NOMBRE_NOTE` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TYPE_E`
+-- Dumping data for table `ENJOY`
 --
 
-LOCK TABLES `TYPE_E` WRITE;
-/*!40000 ALTER TABLE `TYPE_E` DISABLE KEYS */;
-INSERT INTO `TYPE_E` VALUES (1,'séminaire'),(2,'conférence'),(3,'atelier technique'),(4,'atelier déco'),(5,'exposition'),(6,'salon'),(7,'soirée'),(8,'évènement VIP'),(9,'porte ouverte');
-/*!40000 ALTER TABLE `TYPE_E` ENABLE KEYS */;
+LOCK TABLES `ENJOY` WRITE;
+/*!40000 ALTER TABLE `ENJOY` DISABLE KEYS */;
+INSERT INTO `ENJOY` VALUES (1,'Bar à biere','biere','Biere tous les soirs','10h-12','10h-12','10h-12','10h-12','10h-12','10h-12','10h-12',5,1),(2,'nouveau bar','nouveaute','plein de nouvelle chose','10h55','10hà 12h','45','55','1','1','1',0,0);
+/*!40000 ALTER TABLE `ENJOY` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
