@@ -27,6 +27,6 @@ public class ServletAddCommentaireById extends HttpServlet {
         int id =Integer.parseInt(request.getParameter("id"));
         String comment =request.getParameter("comment");
         String user = request.getParameter("user");
-        serviceEvenement.addCommentById(3, comment ,user);        
+        serviceEvenement.addCommentById(id, comment ,user);        
     }
 }

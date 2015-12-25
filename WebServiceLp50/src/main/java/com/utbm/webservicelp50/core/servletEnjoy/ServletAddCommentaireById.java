@@ -26,6 +26,11 @@ public class ServletAddCommentaireById extends HttpServlet {
             throws ServletException, IOException
     {
         ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
-        serviceEnjoy.addCommentById(1, "new comment2222" ,"marc dorcel");        
+         int id =Integer.parseInt(request.getParameter("id"));
+        String comment =request.getParameter("comment");
+        String user = request.getParameter("user");
+    
+        serviceEnjoy.addCommentById(id, comment ,user);
+             
     }
 }

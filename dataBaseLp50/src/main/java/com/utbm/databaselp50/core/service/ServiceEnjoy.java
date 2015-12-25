@@ -27,7 +27,7 @@ public class ServiceEnjoy {
         }
       
         public void addCommentById(int id, String com, String user)
-        {
+        {   System.out.println(id+" "+com+" "+user);
             HibernateEnjoyRepository enjoyRepository = new HibernateEnjoyRepository();
             enjoyRepository.addCommentById(id, com, user);
         }

@@ -165,7 +165,7 @@ public class HibernateEnjoyRepository {
             CommentaireEnjoy commentaire = new CommentaireEnjoy();
             commentaire.setCommentaire(com);
             commentaire.setUser(user);
-            e.getCommentaires().add(commentaire);
+             e.getCommentaires().add(commentaire);
             
             session.getTransaction().commit();
         } catch (HibernateException he) 

@@ -24,6 +24,8 @@ public class ServletAddNoteById extends HttpServlet {
             throws ServletException, IOException
     {
         ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
-        serviceEnjoy.newNoteById(1, 5);
+         int id =Integer.parseInt(request.getParameter("id"));
+          int note =Integer.parseInt(request.getParameter("note"));
+        serviceEnjoy.newNoteById(id, note);
     }
 }

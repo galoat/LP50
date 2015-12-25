@@ -61,13 +61,12 @@
                 />
                 <RatingBar
                     android:id="@+id/Note"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="95dp"
-                    android:numStars="5"
                     android:stepSize="0.1"
                     android:isIndicator="true"
                     android:max="5"
-
+                    android:rating="0.0"
                     />
                 </LinearLayout>
         </LinearLayout>
