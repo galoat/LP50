@@ -50,7 +50,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEnjoyById");
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEnjoyById?id="+ID);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -140,5 +140,34 @@ public class Servlet_Eat {
         }
         return output.toString() ;
     }
+    public String SearchByTheme(String theme) throws IOException {
 
+
+        InputStream stream = null;
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getListeEnjoyByName?type="+theme);
+        URLConnection connection = url.openConnection();
+        StringBuffer output = new StringBuffer("");
+
+        try
+        {
+            HttpURLConnection httpConnection = (HttpURLConnection) connection;
+            httpConnection.setRequestMethod("GET");
+            httpConnection.connect();
+
+            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                stream = httpConnection.getInputStream();
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "";
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+
+
+            }
+
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return output.toString() ;
+    }
 }

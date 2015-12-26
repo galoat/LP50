@@ -37,6 +37,13 @@ public class ServiceEnjoy {
             HibernateEnjoyRepository enjoyRepository = new HibernateEnjoyRepository();
             return enjoyRepository.geListEnjoyByName(name);
         }
+         public List<Enjoy> getListEnjoyByType (String name )
+        {
+            HibernateEnjoyRepository enjoyRepository = new HibernateEnjoyRepository();
+            return enjoyRepository. geListEnjoyByType(name);
+        }
+        
+       
         
         public void newNoteById ( int id , int note )
         {

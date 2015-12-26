@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:id="@+id/linearPrincipal"
+        android:focusableInTouchMode="true"
         >
         <TextView
             android:id="@+id/texteTitre"
@@ -21,6 +22,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@android:color/black"
             android:gravity="center"
+
             />
 
 

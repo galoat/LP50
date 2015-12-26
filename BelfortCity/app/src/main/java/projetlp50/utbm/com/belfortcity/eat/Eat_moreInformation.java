@@ -47,26 +47,27 @@ public class Eat_moreInformation extends AppCompatActivity {
 
         final RatingBar noteBar = (RatingBar)ajout.findViewById(R.id.Note);
         final EditText commentaire = (EditText)ajout.findViewById(R.id.textcomment);
+
         Button boutton =(Button)ajout.findViewById(R.id.envoyer);
         boutton.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
-        LinearLayout layoutPrincipal = (LinearLayout) findViewById(R.id.layoutComm);
-        if (pseudo.getText() != null && commentaire.getText() != null) {
+                                           LinearLayout layoutPrincipal = (LinearLayout) findViewById(R.id.layoutComm);
+                                           if (pseudo.getText().toString() != "" && commentaire.getText().toString() != "") {
                                                ViewGroup comment = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_calendar_more_info_comment, null);
                                                TextView commentairNom = (TextView) comment.findViewById(R.id.TextCommentaireNom);
                                                commentairNom.setText(pseudo.getText());
-                                               name=pseudo.getText().toString();
+                                               name = pseudo.getText().toString();
                                                TextView commentcorp = (TextView) comment.findViewById(R.id.TextCommentaire);
                                                commentcorp.setText(commentaire.getText());
                                                comm = commentaire.getText().toString();
-                                                AddElements task = new AddElements();
+                                               AddElements task = new AddElements();
                                                task.execute(new String[]{});
-                                                note=(int)noteBar.getRating();
+                                               note = (int) noteBar.getRating();
 
 
-                                                AddNote task2 = new AddNote();
-                                                task2.execute(new String[]{});
+                                               AddNote task2 = new AddNote();
+                                               task2.execute(new String[]{});
                                                pseudo.append("");
                                                commentaire.append("");
                                                layoutPrincipal.addView(comment);
@@ -75,6 +76,7 @@ public class Eat_moreInformation extends AppCompatActivity {
                                        }
                                    }
         );
+
         layoutPrincipal.addView(ajout);
 
     }
@@ -134,7 +136,7 @@ public class Eat_moreInformation extends AppCompatActivity {
                     TextView titre =(TextView) findViewById(R.id.texteTitre);
                     titre.setText(jObj.getString("NAME"));
                    TextView  textDescription=(TextView) findViewById(R.id.TextDescription);
-                    textDescription.setText(jObj.getString("DESCRIPTION"));
+                    textDescription.setText(jObj.getString("DESCRIPTION")+" \n\n\n horraire Lundi "+jObj.getString("HORRAIRE_LUNDI")+"\n horraire mardi"+jObj.getString("HORRAIRE_MARDI")+ "\n horraire mercredi : "+jObj.getString("HORRAIRE_MERCREDI")+" \n horraire jeudi :"+jObj.getString("HORRAIRE_JEUDI")+"\n horraire vendredi :"+jObj.getString("HORRAIRE_VENDREDI")+"\n horraire samedi :"+jObj.getString("HORRAIRE_SAMEDI")+"\n horraire Dimanche "+jObj.getString("HORRAIRE_DIMANCHE"));
 
 
                     LinearLayout layoutPrincipal =(LinearLayout)findViewById(R.id.layoutComm);

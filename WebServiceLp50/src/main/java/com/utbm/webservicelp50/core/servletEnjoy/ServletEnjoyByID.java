@@ -36,7 +36,7 @@ public class ServletEnjoyByID extends HttpServlet {
 
         Enjoy enjoy;
         ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
-        enjoy = serviceEnjoy.getById(1);
+        enjoy = serviceEnjoy.getById(Integer.parseInt(request.getParameter("id")));
         json.put("ID", enjoy.getId());
         json.put("NAME", enjoy.getName());
         json.put("DESCRIPTION", enjoy.getDescription());

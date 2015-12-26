@@ -31,7 +31,14 @@ public class ServletListeEnjoyByName extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
         ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
-        List<Enjoy> list = serviceEnjoy.getListEnjoyByName("biere");
+        String type =request.getParameter("type");
+         List<Enjoy> list = null;
+        if(type!=""){
+               list = serviceEnjoy.getListEnjoyByType(type);
+        }else{
+             list = serviceEnjoy.getListEnjoy();
+        }
+      
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         JSONArray jsonListEnjoy = new JSONArray();

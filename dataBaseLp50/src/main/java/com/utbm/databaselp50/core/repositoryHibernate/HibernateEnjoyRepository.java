@@ -235,4 +235,43 @@ public class HibernateEnjoyRepository {
         }
         return listeEnjoy;
     }
+      public List<Enjoy> geListEnjoyByType (String name )
+    {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Enjoy> listeEnjoy = null;
+        
+        try 
+        {
+            session.beginTransaction();
+                        
+            Query query = session.createQuery("from Enjoy en where en.type like '%" + name + "%'");
+            listeEnjoy = query.list();    
+            session.getTransaction().commit();
+        } catch (HibernateException he) 
+        {
+            he.printStackTrace();
+            if(session.getTransaction() != null)
+            {
+                try {
+                        session.getTransaction().rollback();
+                    } catch(HibernateException he2)
+                    {
+                        he2.printStackTrace();
+                    }
+            }
+        } finally
+        {
+            if(session != null) 
+            {
+                try
+                { 
+                    session.close();
+                }
+                catch (HibernateException he) 
+                {
+                }
+            }
+        }
+        return listeEnjoy;
+    }
 }

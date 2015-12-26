@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
         <TextView
@@ -11,16 +12,38 @@
             android:layout_gravity="center_horizontal"
             android:clickable="false"
             android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:textIsSelectable="false"
             android:textSize="30dp"
             android:textAlignment="center"
             android:gravity="center"
             android:text="Eat"
-
             android:background="@color/highlighted_text_material_light"
             />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutrecherche"
+
+        >
+    <EditText
+        android:id="@+id/textrecherche"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="left"
+        android:drawableLeft="@drawable/abc_ic_search_api_mtrl_alpha" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/rechercher"
+            android:layout_gravity="right" />
+    </LinearLayout>
+
 
         <ScrollView
             android:layout_width="match_parent"
