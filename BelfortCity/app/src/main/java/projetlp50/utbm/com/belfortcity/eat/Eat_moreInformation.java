@@ -62,7 +62,9 @@ public class Eat_moreInformation extends AppCompatActivity {
                                                comm = commentaire.getText().toString();
                                                 AddElements task = new AddElements();
                                                task.execute(new String[]{});
-                                                note=noteBar.getNumStars();
+                                                note=(int)noteBar.getRating();
+
+
                                                 AddNote task2 = new AddNote();
                                                 task2.execute(new String[]{});
                                                pseudo.append("");
@@ -98,7 +100,7 @@ public class Eat_moreInformation extends AppCompatActivity {
             String output = null;
             Servlet_Eat sManager = new Servlet_Eat();
             try {
-                output = sManager.addNote(id, note);
+                output = sManager.addNote(note,id);
             } catch (IOException e) {
                 e.printStackTrace();
             }

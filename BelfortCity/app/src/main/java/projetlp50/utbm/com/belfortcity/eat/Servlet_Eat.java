@@ -81,7 +81,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addCommentaireEnjoyById?id="+ID+"&comment"+comm+"&user="+name);
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addCommentaireEnjoyById?id="+ID+"&comment="+comm+"&user="+name);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -114,7 +114,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addNoteEnjoyById?id="+ID+"&note"+note);
+        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addNoteEnjoyById?id="+ID+"&note="+note);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
