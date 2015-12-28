@@ -8,6 +8,7 @@ package com.utbm.databaselp50.core.client;
 import com.utbm.databaselp50.core.entity.CommentaireEnjoy;
 import com.utbm.databaselp50.core.entity.Enjoy;
 import com.utbm.databaselp50.core.service.ServiceEnjoy;
+import com.utbm.databaselp50.core.service.ServicePosition;
 import java.util.List;
 
 /**
@@ -17,9 +18,14 @@ import java.util.List;
 public class app {
      public static void main(String[] args)
      {
+         
+         
+         ServicePosition sp = new ServicePosition();
+         System.out.println(sp.getListPosition().toString());
+         
         // Session session=HibernateUtil.getSessionFactory().openSession();
-        ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
-        serviceEnjoy.addCommentById(1, "new comment2222" ,"marc dorcel");   
+      //  ServiceEnjoy serviceEnjoy = new ServiceEnjoy();
+        //serviceEnjoy.addCommentById(1, "new comment2222" ,"marc dorcel");   
          
         /* Session session=HibernateUtil.getSessionFactory().openSession();
          ServiceEvenement serviceEvenement = new ServiceEvenement();

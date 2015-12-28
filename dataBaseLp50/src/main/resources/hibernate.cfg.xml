@@ -15,5 +15,6 @@
     <mapping resource="Enjoy.hbm.xml"/>
     <mapping resource="Evenement.hbm.xml"/>
     <mapping resource="TypeEven.hbm.xml"/>
+    <mapping resource="Position.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

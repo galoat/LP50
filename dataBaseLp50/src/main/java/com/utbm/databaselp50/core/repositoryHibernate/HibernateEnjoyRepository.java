@@ -8,6 +8,7 @@ package com.utbm.databaselp50.core.repositoryHibernate;
 import com.utbm.databaselp50.core.entity.CommentaireEnjoy;
 import com.utbm.databaselp50.core.entity.Enjoy;
 import com.utbm.databaselp50.core.entity.Evenement;
+import com.utbm.databaselp50.core.entity.Position;
 import com.utbm.databaselp50.core.util.HibernateUtil;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,6 +23,86 @@ import org.hibernate.classic.Session;
  * @author nicolas
  */
 public class HibernateEnjoyRepository {
+     
+    public void addPosition(float x, String nom, float y)
+    {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        try {
+            session.beginTransaction();       
+            Position p = new Position(x,y,nom);
+            session.persist(p);
+             session.getTransaction().commit();
+        } catch (HibernateException he) 
+        {
+            he.printStackTrace();
+            if(session.getTransaction() != null)
+            {
+                try {
+                        session.getTransaction().rollback();
+                    } catch(HibernateException he2)
+                    {
+                        he2.printStackTrace();
+                    }
+            }
+        } finally
+        {
+            if(session != null) 
+            {
+                try
+                { 
+                    session.close();
+                }
+                catch (HibernateException he) 
+                {
+                }
+            }
+        }
+          
+    }
+     public List<Position> getListPosition()
+    {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Position> listeEnjoy = null;
+        
+        try 
+        {
+            session.beginTransaction();
+            Query query = session.createQuery("from Position");
+            listeEnjoy= query.list();
+            
+            session.getTransaction().commit();
+        } catch (HibernateException he) 
+        {
+            he.printStackTrace();
+            if(session.getTransaction() != null)
+            {
+                try {
+                        session.getTransaction().rollback();
+                    } catch(HibernateException he2)
+                    {
+                        he2.printStackTrace();
+                    }
+            }
+        } finally
+        {
+            if(session != null) 
+            {
+                try
+                { 
+                    session.close();
+                }
+                catch (HibernateException he) 
+                {
+                }
+            }
+        }
+        return listeEnjoy;
+        
+    }
+    
+    
+    
     public List<Enjoy> getListEnjoy()
     {
         Session session = HibernateUtil.getSessionFactory().openSession();

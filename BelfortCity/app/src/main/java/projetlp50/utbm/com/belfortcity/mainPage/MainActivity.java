@@ -18,6 +18,7 @@ import projetlp50.utbm.com.belfortcity.MeteoActivity;
 import projetlp50.utbm.com.belfortcity.R;
 import projetlp50.utbm.com.belfortcity.calendar.Calendar;
 import projetlp50.utbm.com.belfortcity.eat.Eat;
+import projetlp50.utbm.com.belfortcity.map.Map;
 import projetlp50.utbm.com.belfortcity.weather.WeatherManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Calendar.class);
+                startActivity(intent);
+            }
+        });
+
+
+        TextView  textViewMap =(TextView)findViewById(R.id.map);
+        textViewMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Map.class);
                 startActivity(intent);
             }
         });
