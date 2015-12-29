@@ -86,9 +86,9 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:drawablePadding="10dp"
-                android:drawableTop="@drawable/home_enjoy"
+                android:drawableTop="@drawable/home_map"
                 android:gravity="center"
-                android:text="@string/home_enjoy"
+                android:text="Map"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"/>
 
