@@ -42,6 +42,12 @@ public class ServiceEnjoy {
             HibernateEnjoyRepository enjoyRepository = new HibernateEnjoyRepository();
             return enjoyRepository. geListEnjoyByType(name);
         }
+         
+        public void addNewEnjoy( Enjoy newEnjoy)
+        {
+            HibernateEnjoyRepository enjoyRepository = new HibernateEnjoyRepository();
+            enjoyRepository.addNewEnjoy(newEnjoy);
+        }
         
        
         

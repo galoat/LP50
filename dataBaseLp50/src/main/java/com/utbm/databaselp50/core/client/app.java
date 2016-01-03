@@ -20,8 +20,9 @@ public class app {
      {
          
          
-         ServicePosition sp = new ServicePosition();
-         System.out.println(sp.getListPosition().toString());
+  
+        // ServicePosition sp = new ServicePosition();
+        // System.out.println(sp.getListPosition().toString());
          
         // Session session=HibernateUtil.getSessionFactory().openSession();
       //  ServiceEnjoy serviceEnjoy = new ServiceEnjoy();

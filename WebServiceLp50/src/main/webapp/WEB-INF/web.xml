@@ -9,6 +9,10 @@
         <servlet-name>ServletListePosition</servlet-name>
         <servlet-class>com.utbm.webservicelp50.core.servlet.position.ServletListePosition</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewEnjoy</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servletEnjoy.NewEnjoy</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListeEvenement</servlet-name>
         <url-pattern>/getListeEvenement</url-pattern>
@@ -88,6 +92,10 @@
     <servlet-mapping>
         <servlet-name>ServletListePosition</servlet-name>
         <url-pattern>/ServletListePosition</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewEnjoy</servlet-name>
+        <url-pattern>/NewEnjoy</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,9 +5,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Accueil</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Ajouter un nouvelle évenement ou Enjoy :</h1>
+        <a href="newEvent">Ajouter un nouvelle event</a>
+        <br>
+        <br>
+        <a href="NewEnjoy">Ajouter un enjoy</a>
     </body>
 </html>
