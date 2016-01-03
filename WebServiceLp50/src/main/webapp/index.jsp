@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>Ajouter un nouvelle évenement ou Enjoy :</h1>
-        <a href="newEvent">Ajouter un nouvelle event</a>
+        <a href="NewEvent">Ajouter un nouvelle event</a>
         <br>
         <br>
         <a href="NewEnjoy">Ajouter un enjoy</a>
