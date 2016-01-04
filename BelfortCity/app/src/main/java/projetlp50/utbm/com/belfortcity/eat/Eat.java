@@ -47,6 +47,7 @@ public class Eat extends AppCompatActivity {
                                            EditText text = (EditText)findViewById(R.id.textrecherche);
                                            if(text.getText().toString()!=""){
                                                theme=text.getText().toString();
+                                         
                                                GetElementsByType task = new GetElementsByType();
                                                task.execute(new String[]{});
                                            }

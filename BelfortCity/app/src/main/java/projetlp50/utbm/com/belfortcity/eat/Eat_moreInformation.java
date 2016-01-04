@@ -68,8 +68,8 @@ public class Eat_moreInformation extends AppCompatActivity {
 
                                                AddNote task2 = new AddNote();
                                                task2.execute(new String[]{});
-                                               pseudo.append("");
-                                               commentaire.append("");
+                                             pseudo.setText("");
+                                               commentaire.setText("");
                                                layoutPrincipal.addView(comment);
                                            }
 

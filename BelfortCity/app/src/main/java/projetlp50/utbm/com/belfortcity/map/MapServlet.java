@@ -1,4 +1,4 @@
-package projetlp50.utbm.com.belfortcity.meteo;
+package projetlp50.utbm.com.belfortcity.map;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import projetlp50.utbm.com.belfortcity.getIp.AdresseIp;
 /**
  * Created by galoat on 28/12/15.
  */
-public class MeteoServlet {
+public class MapServlet {
     public String listePosition() throws IOException {
 
 
