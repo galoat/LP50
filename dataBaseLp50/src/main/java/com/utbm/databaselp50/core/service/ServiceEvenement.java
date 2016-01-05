@@ -21,6 +21,11 @@ public class ServiceEvenement {
         HibernateEvenementRepository evenementRepository = new HibernateEvenementRepository();
         return evenementRepository.getListEvenement();
     }
+     public void addNewEvenement( Evenement newEnjoy)
+        {
+            HibernateEvenementRepository enjoyRepository = new HibernateEvenementRepository();
+            enjoyRepository.addNewEvenement(newEnjoy);
+        }
     
     public Evenement getById(int id)
     {

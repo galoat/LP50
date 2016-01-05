@@ -13,5 +13,6 @@
         <br>
         <br>
         <a href="NewEnjoy">Ajouter un enjoy</a>
+         <a href="NewPosition">Ajouter un enjoy</a>
     </body>
 </html>

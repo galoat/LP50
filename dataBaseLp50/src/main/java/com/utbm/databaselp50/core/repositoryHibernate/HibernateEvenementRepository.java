@@ -195,6 +195,35 @@ public class HibernateEvenementRepository {
         }
         return listeEvenement;
     }
+    
+    
+       public void addNewEvenement( Evenement newEnjoy )
+    {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+   	try 
+        {
+            session.beginTransaction();
+	    session.persist(newEnjoy);
+	    session.getTransaction().commit();
+	} catch (HibernateException he) {
+            he.printStackTrace();
+            if(session.getTransaction() != null) { 
+                try {
+                    session.getTransaction().rollback();	
+                } catch(HibernateException he2) {
+                    he2.printStackTrace();
+                } 
+            }
+        } finally {
+            if(session != null) {
+                try { session.close();
+
+                }
+                catch (HibernateException he) {
+                }
+            }
+        }
+    }
 }
 
 

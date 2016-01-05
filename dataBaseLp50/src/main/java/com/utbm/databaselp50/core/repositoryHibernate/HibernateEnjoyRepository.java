@@ -129,6 +129,8 @@ public class HibernateEnjoyRepository {
         }
     }
     
+   
+    
     public List<Enjoy> getListEnjoy()
     {
         Session session = HibernateUtil.getSessionFactory().openSession();
