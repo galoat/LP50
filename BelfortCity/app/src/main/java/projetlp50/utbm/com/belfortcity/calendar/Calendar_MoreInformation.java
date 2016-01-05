@@ -65,8 +65,8 @@ public class Calendar_MoreInformation extends AppCompatActivity {
                 comm = commentaire.getText().toString();
                 AddElements task = new AddElements();
                 task.execute(new String[]{});
-                pseudo.append("");
-                commentaire.append("");
+                pseudo.setText("");
+                commentaire.setText("");
                 layoutPrincipal.addView(comment);
             }
 

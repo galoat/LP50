@@ -3,7 +3,6 @@ package projetlp50.utbm.com.belfortcity.map;
 import projetlp50.utbm.com.belfortcity.R;
 import projetlp50.utbm.com.belfortcity.eat.Eat_moreInformation;
 import projetlp50.utbm.com.belfortcity.eat.Servlet_Eat;
-import projetlp50.utbm.com.belfortcity.meteo.MeteoServlet;
 
 import  com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
@@ -37,6 +36,7 @@ public class Map extends AppCompatActivity {
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 map=googleMap;
+                map.setMyLocationEnabled(true);
                 //ajoute un marker sur Paris
                 googleMap.addMarker(new MarkerOptions().title("Belfort").position(Belfort));
                      //centre la google map sur Paris (avec animation de zoom)
@@ -56,7 +56,7 @@ public class Map extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             String output = null;
-            MeteoServlet sManager = new MeteoServlet();
+            MapServlet sManager = new MapServlet();
             try {
                 output = sManager.listePosition();
             } catch (IOException e) {

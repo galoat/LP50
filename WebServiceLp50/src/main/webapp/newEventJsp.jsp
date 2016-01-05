@@ -14,10 +14,10 @@
     </head>
     
     <body align="center">
-        <h1>New Enjoy</h1>
+        <h1>New Evenement</h1>
         <div align="center" style="margin:50px; border-color:  black;border-width: thick;"> 
 
-        <form action="NewEnjoy" method="POST">
+        <form action="NewEvent" method="POST">
                 <table>
                     <tr></tr>
                     <tr>
@@ -40,6 +40,14 @@
                             <div class="label">
                                 <label>Start Date:</label>
                                 <input name="Start_Date" type="text">
+                            </div> 
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <div class="label">
+                                <label>Type</label>
+                                <input name="type" type="text">
                             </div> 
                         </td>
                     </tr>
@@ -69,7 +77,7 @@
                         <td>
                             <div class="label">
                                 <label>Minute fin :</label>
-                                <input name="Minute_F" type="text">
+                                <input name="Heure_F" type="text">
                             </div> 
                         </td>
                     </tr>

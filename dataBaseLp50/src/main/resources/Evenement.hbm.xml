@@ -22,7 +22,7 @@
         <property name="minuteD" column="MINUTE_D" not-null="true" />
         <property name="minuteF" column="MINUTE_F" not-null="true" />
         
-        <many-to-one name="type" column="TYPE" not-null="true" fetch="join"/>
+        <many-to-one name="type" column="TYPE" not-null="true" fetch="join" cascade="all"/>
              
         <set cascade="all" name="commentaires" table="EVENEMENT_COMMENTAIRE">
             <key column = "ID_EVENT"/>

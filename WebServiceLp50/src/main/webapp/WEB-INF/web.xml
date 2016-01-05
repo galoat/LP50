@@ -17,6 +17,10 @@
         <servlet-name>NewEvent</servlet-name>
         <servlet-class>com.utbm.webservicelp50.core.servletEvenement.NewEvent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewPosition</servlet-name>
+        <servlet-class>com.utbm.webservicelp50.core.servlet.position.NewPosition</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListeEvenement</servlet-name>
         <url-pattern>/getListeEvenement</url-pattern>
@@ -104,6 +108,10 @@
     <servlet-mapping>
         <servlet-name>NewEvent</servlet-name>
         <url-pattern>/NewEvent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPosition</servlet-name>
+        <url-pattern>/NewPosition</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
