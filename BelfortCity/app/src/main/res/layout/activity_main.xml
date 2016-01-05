@@ -75,7 +75,7 @@
                 android:drawablePadding="10dp"
                 android:drawableTop="@drawable/home_eat"
                 android:gravity="center"
-                android:text="@string/home_eat"
+                android:text="Enjoy"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"/>
 

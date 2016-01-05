@@ -19,7 +19,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getListeEnjoy");
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/getListeEnjoy");
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -50,7 +50,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEnjoyById?id="+ID);
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/getEnjoyById?id="+ID);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -81,7 +81,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addCommentaireEnjoyById?id="+ID+"&comment="+comm+"&user="+name);
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/addCommentaireEnjoyById?id="+ID+"&comment="+comm+"&user="+name);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -114,7 +114,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addNoteEnjoyById?id="+ID+"&note="+note);
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/addNoteEnjoyById?id="+ID+"&note="+note);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -144,7 +144,7 @@ public class Servlet_Eat {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getListeEnjoyByName?type="+theme);
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/getListeEnjoyByName?type="+theme);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 

@@ -18,7 +18,7 @@ public class MeteoServlet {
 
 
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/ServletListePosition");
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/ServletListePosition");
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 

@@ -20,7 +20,7 @@ public class Calendar_Servlet {
 
 
         InputStream stream = null;
-       URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getListeEvenementByDate?year="+year+"&month="+(month+1)+"&day="+day);
+       URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/getListeEvenementByDate?year="+year+"&month="+(month+1)+"&day="+day);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
 
@@ -49,7 +49,7 @@ public class Calendar_Servlet {
 
     public String ListeComment(int id) throws IOException{
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/getEvenmentById?id="+id);
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/getEvenmentById?id="+id);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
         try
@@ -73,7 +73,7 @@ public class Calendar_Servlet {
 
     public String addComment(int id,String name,String comment) throws IOException{
         InputStream stream = null;
-        URL url = new URL("http://" + AdresseIp.IP + ":8080/WebServiceLp50/addCommentaireEvenementById?id="+id+"&user="+name+"&comment="+comment);
+        URL url = new URL("http://" + AdresseIp.IP + ":8084/WebServiceLp50/addCommentaireEvenementById?id="+id+"&user="+name+"&comment="+comment);
         URLConnection connection = url.openConnection();
         StringBuffer output = new StringBuffer("");
         try
